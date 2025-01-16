@@ -1,0 +1,7 @@
+package com.project.EatIt.repository;
+
+import com.project.EatIt.model.Cart;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CartRepository extends JpaRepository<Cart, Long> {
+}

@@ -48,7 +48,6 @@ public class AdminRestaurantController {
 
     @DeleteMapping("/{restaurantId}")
     public ResponseEntity<MessageResponse> deleteRestaurant(
-            @RequestBody CreateRestaurantRequest restaurantRequest,
             @RequestHeader("Authorization") String jwt,
             @PathVariable Long restaurantId
     ) throws Exception {
@@ -63,7 +62,6 @@ public class AdminRestaurantController {
 
     @PutMapping("/{restaurantId}/status")
     public ResponseEntity<Restaurant> updateRestaurantStatus(
-            @RequestBody CreateRestaurantRequest restaurantRequest,
             @RequestHeader("Authorization") String jwt,
             @PathVariable Long restaurantId
     ) throws Exception {
@@ -76,7 +74,6 @@ public class AdminRestaurantController {
 
     @GetMapping("/user")
     public ResponseEntity<Restaurant> findRestaurantByOwnerId(
-            @RequestBody CreateRestaurantRequest restaurantRequest,
             @RequestHeader("Authorization") String jwt
     ) throws Exception {
 

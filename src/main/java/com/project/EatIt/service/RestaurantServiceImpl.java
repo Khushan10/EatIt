@@ -9,11 +9,13 @@ import com.project.EatIt.repository.RestaurantRepository;
 import com.project.EatIt.repository.UserRepository;
 import com.project.EatIt.request.CreateRestaurantRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class RestaurantServiceImpl implements RestaurantService{
 
     @Autowired
@@ -120,11 +122,11 @@ public class RestaurantServiceImpl implements RestaurantService{
         RestaurantDTO restaurantDTO = new RestaurantDTO();
         restaurantDTO.setDescription(restaurant.getDescription());
         restaurantDTO.setImages(restaurant.getImages());
-        restaurantDTO.setTitle(restaurant.getTitle());
+        restaurantDTO.setTitle(restaurant.getName());
         restaurantDTO.setId(restaurantId);
 
-        if(!user.getFavourite().contains(restaurantDTO)){
-            user.getFavourite().add(restaurantDTO);
+        if(!user.getFavourites().contains(restaurantDTO)){
+            user.getFavourites().add(restaurantDTO);
         }
 
         userRepository.save(user);

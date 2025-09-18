@@ -76,7 +76,7 @@ public class AuthController {
         return new ResponseEntity<>(authResponse, HttpStatus.CREATED);
     }
 
-    @PostMapping("/singin")
+    @PostMapping("/signin")
     public ResponseEntity<AuthResponse> singin(@RequestBody LoginRequest request) throws Exception{
         String email = request.getEmail();
         String password = request.getPassword();

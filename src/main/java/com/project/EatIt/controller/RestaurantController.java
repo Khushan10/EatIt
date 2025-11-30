@@ -69,5 +69,4 @@ public class RestaurantController {
         return new ResponseEntity<>(restaurant, HttpStatus.OK);
     }
 
-    // 4:31:30
 }

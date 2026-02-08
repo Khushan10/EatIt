@@ -2,9 +2,11 @@ package com.project.EatIt.controller;
 
 import com.project.EatIt.model.Cart;
 import com.project.EatIt.model.CartItem;
+import com.project.EatIt.model.User;
 import com.project.EatIt.request.AddCartItemRequest;
 import com.project.EatIt.request.UpdateCartItemRequest;
 import com.project.EatIt.service.CartService;
+import com.project.EatIt.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,8 @@ public class CartController {
 
     @Autowired
     private CartService cartService;
+    @Autowired
+    private UserService userService;
 
     @PutMapping("/cart/add")
     public ResponseEntity<CartItem> addItemToCart(@RequestBody AddCartItemRequest request,
@@ -43,14 +47,16 @@ public class CartController {
     @PutMapping("/cart/clear")
     public ResponseEntity<Cart> clearCart(@RequestHeader("Authorization") String jwt) throws Exception {
 
-        Cart cart = cartService.clearCart(jwt);
+        User user = userService.findUserByJWT(jwt);
+        Cart cart = cartService.clearCart(user.getId());
         return new ResponseEntity<>(cart,HttpStatus.OK);
     }
 
     @GetMapping("/cart")
     public ResponseEntity<Cart> findUserCart(@RequestHeader("Authorization") String jwt) throws Exception {
 
-        Cart cart = cartService.findCartByUserId(jwt);
+        User user = userService.findUserByJWT(jwt);
+        Cart cart = cartService.clearCart(user.getId());
         return new ResponseEntity<>(cart,HttpStatus.OK);
     }
 }

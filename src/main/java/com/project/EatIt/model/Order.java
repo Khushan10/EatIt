@@ -1,6 +1,7 @@
 package com.project.EatIt.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.project.EatIt.constants.OrderStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,7 +29,7 @@ public class Order {
 
     private Long totalAmount;
 
-    private String orderStatus;
+    private OrderStatus orderStatus;
 
     private Date createdAt;
 
@@ -40,6 +41,6 @@ public class Order {
 
     private int totalItem;
 
-    private int totalPrice;
+    private Long totalPrice;
 
 }

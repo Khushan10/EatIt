@@ -1,48 +1,32 @@
-import { IconButton } from "@mui/material";
+import { IconButton, Badge } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import Avatar from '@mui/material/Avatar';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-
-const colors = {
-    pink: "#e91e63",
-    white: "#ffffff",
-};
-const fontSizes = {
-    default: "1.5rem",
-}
+import "./Navbar.css"
 
 export const Navbar = () => {
     return (
-        <nav
-            style={{
-                backgroundColor: colors.pink,
-                paddingBlock: "0.8rem",
-                paddingInline: "clamp(1rem, 8vw, 6rem)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                width: "100%",
-            }}
-        >
-            <div style={{ display: "flex", alignItems: "center" }}>
-                <span style={{ fontWeight: 600, color: colors.white, fontSize: fontSizes.default, whiteSpace: "nowrap" }}>
+        <nav className="navbar">
+            <div className="navbar-logo-container">
+                <span className="navbar-logo-text">
                     Eat It
                 </span>
             </div>
 
-            <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
-                <IconButton sx={{ color: colors.white }}>
-                    <SearchIcon sx={{ fontSize: fontSizes.default, color: colors.white }} />
+            <div className="navbar-icons-container">
+                <IconButton sx={{ color: "white" }}>
+                    <SearchIcon sx={{ fontSize: "1.5rem" }} />
                 </IconButton>
 
-                <Avatar style={{ backgroundColor: colors.white, color: colors.pink }}>
-                    K
+                <Avatar className="navbar-avatar">
+                    EI
                 </Avatar>
-                <IconButton sx={{ color: colors.white }}>
-                    <ShoppingCartIcon sx={{ fontSize: fontSizes.default, color: colors.white }} />
+                <IconButton>
+                    <Badge color='secondary' badgeContent={4}>
+                        <ShoppingCartIcon sx={{ fontSize: "1.5rem", color: "white" }} />
+                    </Badge>
                 </IconButton>
             </div>
-
         </nav>
     );
 };

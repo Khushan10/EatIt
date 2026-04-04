@@ -1,0 +1,37 @@
+li{
+    list-style:none;
+}
+
+.navbar {
+    background-color: #e91e63;
+    padding-block: 0.8rem;
+    padding-inline: clamp(1rem, 8vw, 6rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar-logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo-text {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 1.5rem;
+    white-space: nowrap;
+}
+
+.navbar-icons-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar-avatar {
+    background-color: #ffffff !important;
+    color: #e91e63 !important;
+}

@@ -1,0 +1,12 @@
+.carousel-slide {
+    outline: none;
+}
+
+/* spacing between card-style slides (e.g. restaurants) */
+.carousel-slide.spaced {
+    padding: 0 0.75rem;
+}
+
+.carousel-slide.spaced .restaurant-card {
+    width: auto;
+}

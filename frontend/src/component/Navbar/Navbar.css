@@ -18,6 +18,10 @@ li{
     align-items: center;
 }
 
+.navbar-logo-link {
+    text-decoration: none;
+}
+
 .navbar-logo-text {
     font-weight: 600;
     color: #ffffff;

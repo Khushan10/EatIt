@@ -2,15 +2,18 @@ import { IconButton, Badge } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import Avatar from '@mui/material/Avatar';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Link } from "react-router-dom";
 import "./Navbar.css"
 
 export const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="navbar-logo-container">
-                <span className="navbar-logo-text">
-                    Eat It
-                </span>
+                <Link to="/" className="navbar-logo-link">
+                    <span className="navbar-logo-text">
+                        Eat It
+                    </span>
+                </Link>
             </div>
 
             <div className="navbar-icons-container">

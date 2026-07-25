@@ -1,0 +1,232 @@
+.restaurant-page {
+    background-color: #0d0d0d;
+    min-height: 100vh;
+    color: #ffffff;
+}
+
+/* ---- Hero banner ---- */
+.restaurant-hero {
+    position: relative;
+    width: 100%;
+    height: 18rem;
+    overflow: hidden;
+}
+
+.restaurant-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.restaurant-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.25));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem clamp(1rem, 8vw, 6rem);
+}
+
+.restaurant-back-btn {
+    position: absolute !important;
+    top: 1rem;
+    left: clamp(1rem, 8vw, 6rem);
+    background-color: rgba(0, 0, 0, 0.45) !important;
+}
+
+.restaurant-hero-content {
+    max-width: 50rem;
+}
+
+.restaurant-hero-title {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+}
+
+.restaurant-hero-description {
+    font-size: 1.05rem;
+    color: #d1d5db;
+    margin: 0;
+}
+
+.restaurant-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 0.85rem;
+}
+
+.restaurant-meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.95rem;
+    color: #e5e7eb;
+}
+
+.restaurant-open-badge {
+    margin-left: 0.5rem;
+    padding: 0.1rem 0.6rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.restaurant-open-badge.is-open {
+    background-color: #22c55e;
+}
+
+.restaurant-open-badge.is-closed {
+    background-color: #ef4444;
+}
+
+/* ---- Body: sidebar + menu ---- */
+.restaurant-body {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem clamp(1rem, 8vw, 6rem);
+    align-items: flex-start;
+}
+
+/* ---- Filter sidebar ---- */
+.restaurant-filters {
+    flex: 0 0 16rem;
+    position: sticky;
+    top: 1.5rem;
+}
+
+.filter-group {
+    width: 100%;
+}
+
+.filter-title {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.filter-divider {
+    margin: 1.5rem 0 !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* ---- Menu list ---- */
+.restaurant-menu {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    min-width: 0;
+}
+
+.menu-item {
+    background-color: #161616;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.menu-item-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.25rem;
+}
+
+.menu-item-image {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 0.4rem;
+    object-fit: cover;
+    flex-shrink: 0;
+    background-color: #2a2a2a;
+}
+
+.menu-item-info {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.menu-item-name {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem;
+    color: #ffffff;
+}
+
+.menu-item-price {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 0.6rem;
+}
+
+.menu-item-description {
+    font-size: 0.95rem;
+    color: #9ca3af;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.menu-item-expand {
+    align-self: center;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.menu-item-expand.expanded {
+    transform: rotate(180deg);
+}
+
+.menu-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 1.25rem 1.25rem;
+    flex-wrap: wrap;
+}
+
+.menu-item-tag {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #e91e63;
+    border: 1px solid #e91e63;
+    border-radius: 9999px;
+    padding: 0.15rem 0.75rem;
+    text-transform: capitalize;
+}
+
+.menu-empty {
+    color: #9ca3af;
+    font-size: 1.1rem;
+    padding: 2rem 0;
+}
+
+/* ---- Not found ---- */
+.restaurant-not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    min-height: 60vh;
+    color: #d1d5db;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .restaurant-body {
+        flex-direction: column;
+    }
+
+    .restaurant-filters {
+        position: static;
+        flex: 1 1 auto;
+        width: 100%;
+    }
+}

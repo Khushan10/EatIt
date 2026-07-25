@@ -53,6 +53,7 @@ export const Home = () => {
                     slideClassName='spaced'
                     renderItem={(item) => (
                         <RestaurantCard
+                            id={item.id}
                             image={item.image}
                             title={item.title}
                             description={item.description}

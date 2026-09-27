@@ -1,0 +1,238 @@
+.cart-page {
+    background-color: #0d0d0d;
+    min-height: calc(100vh - 4rem);
+    color: #ffffff;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    padding: 2rem clamp(1rem, 5vw, 4rem);
+    box-sizing: border-box;
+}
+
+/* ---- Left column: items + bill ---- */
+.cart-left {
+    flex: 0 0 32%;
+    min-width: 20rem;
+    padding-right: 2.5rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cart-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.cart-item-image {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 0.4rem;
+    object-fit: cover;
+    flex-shrink: 0;
+    background-color: #2a2a2a;
+}
+
+.cart-item-mid {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.cart-item-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0 0 0.35rem;
+}
+
+.cart-item-qty {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.cart-item-qty-value {
+    min-width: 1.25rem;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.cart-item-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+}
+
+.cart-item-tag {
+    font-size: 0.75rem;
+    color: #e5e7eb;
+    background-color: #1f1f1f;
+    border-radius: 9999px;
+    padding: 0.2rem 0.7rem;
+}
+
+.cart-item-price {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    white-space: nowrap;
+    padding-top: 0.25rem;
+}
+
+.cart-divider {
+    margin: 1.5rem 0 !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* ---- Bill details ---- */
+.bill-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+}
+
+.bill-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    color: #d1d5db;
+    margin-bottom: 0.85rem;
+}
+
+.bill-total {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+.place-order-btn {
+    margin-top: 1.5rem !important;
+    font-weight: 700 !important;
+}
+
+/* ---- Right column: addresses ---- */
+.cart-right {
+    flex: 1 1 auto;
+    padding-left: 2.5rem;
+}
+
+.address-heading {
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0 0 2rem;
+}
+
+.address-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.address-card {
+    background-color: #161616;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.address-card.selected {
+    border-color: #e91e63;
+    box-shadow: 0 0 0 1px #e91e63;
+}
+
+.address-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.85rem;
+}
+
+.address-card-label {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.address-card-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 0.15rem;
+}
+
+.address-card-text {
+    font-size: 0.95rem;
+    color: #9ca3af;
+    line-height: 1.5;
+    margin: 0 0 1.25rem;
+    flex-grow: 1;
+}
+
+.address-select-btn {
+    margin-top: auto !important;
+}
+
+/* Add New Address card */
+.add-address-card {
+    align-self: start;
+}
+
+.add-address-btn {
+    margin-top: 0.5rem !important;
+}
+
+.add-address-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.add-address-form-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* ---- Empty cart ---- */
+.cart-empty {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    min-height: 60vh;
+    color: #d1d5db;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+    .cart-page {
+        flex-direction: column;
+    }
+
+    .cart-left {
+        flex: 1 1 auto;
+        min-width: 0;
+        padding-right: 0;
+        padding-bottom: 2rem;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .cart-right {
+        padding-left: 0;
+        padding-top: 2rem;
+    }
+
+    .address-grid {
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    }
+}

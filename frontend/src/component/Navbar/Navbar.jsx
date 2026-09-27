@@ -2,10 +2,14 @@ import { IconButton, Badge } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import Avatar from '@mui/material/Avatar';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
 import "./Navbar.css"
 
 export const Navbar = () => {
+    const { itemCount } = useCart();
+    const navigate = useNavigate();
+
     return (
         <nav className="navbar">
             <div className="navbar-logo-container">
@@ -24,8 +28,8 @@ export const Navbar = () => {
                 <Avatar className="navbar-avatar">
                     EI
                 </Avatar>
-                <IconButton>
-                    <Badge color='secondary' badgeContent={4}>
+                <IconButton onClick={() => navigate('/cart')} aria-label="cart">
+                    <Badge color='secondary' badgeContent={itemCount}>
                         <ShoppingCartIcon sx={{ fontSize: "1.5rem", color: "white" }} />
                     </Badge>
                 </IconButton>

@@ -207,6 +207,63 @@
     padding: 2rem 0;
 }
 
+/* ---- Customize dialog ---- */
+.customize-dialog-title {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700 !important;
+}
+
+.customize-base-price {
+    margin: 0 0 0.75rem;
+    color: #9ca3af;
+    font-size: 0.95rem;
+}
+
+.customize-empty {
+    color: #9ca3af;
+    margin: 0.5rem 0;
+}
+
+.customize-default-tag {
+    margin-left: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #e91e63;
+    border: 1px solid #e91e63;
+    border-radius: 9999px;
+    padding: 0.05rem 0.5rem;
+    text-transform: uppercase;
+}
+
+.customize-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.25rem;
+    font-weight: 600;
+}
+
+.customize-quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+    padding: 0.15rem 0.35rem;
+}
+
+.customize-quantity-value {
+    min-width: 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.customize-actions {
+    padding: 1rem 1.5rem !important;
+}
+
 /* ---- Not found ---- */
 .restaurant-not-found {
     display: flex;
